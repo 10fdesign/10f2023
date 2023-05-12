@@ -1,6 +1,6 @@
 <div class="container py-20">
 	
-	<h1 class="text-5xl font-black text-center mb-10">Featured Projects</h1>
+	<h1 class="text-5xl font-display text-center mb-10">Featured Projects</h1>
   
   {% for project in site.projects : limit 1 %}
   <div class="flex flex-row items-center gap-4">
@@ -9,7 +9,7 @@
   	</div>
   	<div class="basis-1/2 flex flex-col gap-1">
   		<p class="font-bold text-pink-500">{{ project.responsibilities }}</p>
-  		<h1 class="text-5xl font-black">{{ project.title }}</h1>
+  		<h1 class="text-5xl font-display">{{ project.title }}</h1>
   		<p>{{ project.excerpt }}</p>
   		<p>
 		  {% include button.html
