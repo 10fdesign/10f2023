@@ -31,7 +31,9 @@ github_username: jekyll
 
 collections:
   testimonials:
-    output: true
+    output: false
+  projects:
+    output: false
 
 # Build settings
 plugins:
