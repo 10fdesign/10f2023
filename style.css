@@ -568,6 +568,7 @@ video {
   margin-bottom: 2.5rem;
 }
 
+<<<<<<< HEAD
 .my-40 {
   margin-top: 10rem;
   margin-bottom: 10rem;
@@ -576,6 +577,11 @@ video {
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
+=======
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+>>>>>>> f951b864d38f2d8a651c7db09b340d045ed1050a
 }
 
 .mb-10 {
@@ -628,6 +634,10 @@ video {
 
 .basis-4\/5 {
   flex-basis: 80%;
+}
+
+.basis-1\/2 {
+  flex-basis: 50%;
 }
 
 .transform {
@@ -684,6 +694,16 @@ video {
 .bg-teal-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 253 250 / var(--tw-bg-opacity));
+}
+
+.bg-pink-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
+}
+
+.bg-pink-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
 
 .px-6 {
@@ -791,6 +811,14 @@ video {
   color: rgb(20 184 166 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+>>>>>>> f951b864d38f2d8a651c7db09b340d045ed1050a
 .hover\:text-sky-700:hover {
   --tw-text-opacity: 1;
   color: rgb(3 105 161 / var(--tw-text-opacity));
