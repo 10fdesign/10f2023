@@ -1,2 +1,12 @@
-<h1 class="bg-{{ include.light_color }} text-{{ include.dark_color }}">{{ include.title }}</h1>
-<h2 class="bg-red-400">Testing</h2>
+<div class="container my-10">
+  <h3 class="text-{{ include.dark_color }} font-bold mb-2 text-sm">{{ include.subtitle }}</h3>
+  <h2 class="text-3xl font-bold mb-5">{{ include.title }}</h2>
+  <p class="max-w-2xl mb-3">{{ include.body }}</p>
+  {% include button.html
+             text_color=include.dark_color
+             bg_color=include.light_color
+             outline_color=include.mid_color
+             button_text=include.button_text
+             button_link=include.button_link
+             %}
+</div>
