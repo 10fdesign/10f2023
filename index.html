@@ -1,12 +1,20 @@
 ---
-# this is an empty front matter
+layout: default
 ---
 
 {% include nav.html %}
 
 {% include header.html %}
 
-{% include work.html %}
+{% include panel.html
+           subtitle="Powering 99% of the Internet!"
+           title="Wordpress web development"
+           body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et ante sed erat sodales suscipit et sed massa."
+           dark_color="blue-500"
+           light_color="blue-100"
+           %}
+
+<h1 class="text-sky-500 font-bold text-2xl">What's cookin</h1>
 
 {% include pricing.html %}
 
