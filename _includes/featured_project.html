@@ -5,7 +5,7 @@
   {% for project in site.projects : limit 1 %}
   <div class="flex flex-col md:flex-row items-center gap-4">
   	<div class="basis-1/2">
-  		<img src="{{ project.tile-photo }}" alt="">
+  		<img src="{{ project.tile-photo }}" alt="" loading="lazy">
   	</div>
   	<div class="basis-1/2 flex flex-col gap-1">
   		<p class="font-bold text-pink-500">{{ project.responsibilities }}</p>
@@ -16,14 +16,16 @@
            text_color="pink-500"
            bg_color="pink-50"
            outline_color="pink-300"
-           button_text="Learn More"
+           button_text="View Website"
            button_link=project.link
+					 target="_blank"
            %}
   		</p>
   	</div>
   </div>
   {% endfor %}
 
+	{% if false %}
   <div class="flex flex-col-reverse md:flex md:flex-row gap-4 items-center my-4">
   	<div class="basis-1/2 text-right">
 		  {% include button.html
@@ -40,5 +42,6 @@
   		</p>
   	</div>
   </div>
+	{% endif %}
 
 </div>
