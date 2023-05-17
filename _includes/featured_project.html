@@ -16,14 +16,16 @@
            text_color="pink-500"
            bg_color="pink-50"
            outline_color="pink-300"
-           button_text="Learn More"
+           button_text="View Website"
            button_link=project.link
+					 target="_blank"
            %}
   		</p>
   	</div>
   </div>
   {% endfor %}
 
+	{% if false %}
   <div class="flex flex-row gap-4 items-center my-4">
   	<div class="basis-1/2 text-right">
 		  {% include button.html
@@ -40,5 +42,6 @@
   		</p>
   	</div>
   </div>
+	{% endif %}
 
 </div>
