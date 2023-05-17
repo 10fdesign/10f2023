@@ -1,15 +1,15 @@
 <div class="container py-20">
 	
 	<h1 class="text-5xl font-display text-center mb-10">Testimonials</h1>
-  <div class="columns-3 gap-16">
+  <div class="columns-1 sm:columns-2 lg:columns-3 gap-16">
 	  {% for testimonial in site.testimonials %}
-    	<div class="flex flex-col gap-3 mb-16 whitespace-nowrap">
-				<div class="whitespace-normal">
-					<div class="flex flex-row items-center gap-5">
-						<svg class="basis-1/5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.819 50.819">
+    	<div class="mb-8 lg:mb-16 whitespace-nowrap break-inside-avoid-column overflow-hidden">
+				<div class="whitespace-normal flex flex-col gap-1">
+					<div class="flex flex-row items-center gap-2">
+						<svg class="w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.819 50.819">
 							<path id="FontAwsome_user-circle_" data-name="FontAwsome (user-circle)" d="M25.41,8a25.41,25.41,0,1,0,25.41,25.41A25.405,25.405,0,0,0,25.41,8Zm0,9.836a9.016,9.016,0,1,1-9.016,9.016A9.016,9.016,0,0,1,25.41,17.836Zm0,35.246A19.634,19.634,0,0,1,10.4,46.094a11.423,11.423,0,0,1,10.092-6.127,2.507,2.507,0,0,1,.727.113,13.566,13.566,0,0,0,4.191.707A13.514,13.514,0,0,0,29.6,40.08a2.507,2.507,0,0,1,.727-.113A11.423,11.423,0,0,1,40.42,46.094,19.634,19.634,0,0,1,25.41,53.082Z" transform="translate(0 -8)" fill="#25e69e"/>
 						</svg>
-						<div class="basis-4/5 leading-tight">
+						<div class="basis-full leading-tight">
 							<p class="font-bold mb-1">{{ testimonial.author }}</p>
 							<p class="italic">{{ testimonial.author_institution }}</p>
 						</div>
