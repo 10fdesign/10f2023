@@ -34,6 +34,8 @@ collections:
     output: false
   projects:
     output: false
+  priceables:
+    output: false
 
 # Build settings
 plugins:
