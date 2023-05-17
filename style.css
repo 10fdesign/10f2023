@@ -707,6 +707,10 @@ video {
   gap: 2rem;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .whitespace-normal {
   white-space: normal;
 }
