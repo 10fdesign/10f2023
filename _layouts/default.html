@@ -5,8 +5,6 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="style.css">
 
-
-    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
     <script type="importmap">
       {
         "imports": {
@@ -14,15 +12,18 @@
         }
       }
     </script>
-    <script type="module" src="./assets/js/waveform.js" class="text-green-200"></script>
+    <script defer type="module" src="./assets/js/waveform.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="font-body">
 		{% include nav.html %}
     <section>
 
       {{ content }}
     </section>
     {% include footer.html %}
-    {% include waveform.html %}
+    {% include waveform/waveform.html %}
   </body>
 </html>
