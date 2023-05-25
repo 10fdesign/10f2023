@@ -1,4 +1,4 @@
-import * as THREE from '/assets/js/three.module.min.js';
+import * as THREE from './three.module.min.js';
 
 const parent = document.getElementById('waveform_container');
 const canvas = document.getElementById('waveform');
