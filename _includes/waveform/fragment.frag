@@ -11,6 +11,8 @@ void main() {
 
   vec4 color = vec4(1.0, vUvY, 1.0 - vUvY, 0.25 - 0.125 * faded);
 
+  // vec4 color = vec4(1., 0.4, 0., 1.);
+
   // float r = 0.5 + cos(3.0 + vUvY * 16.14) / 2.0;
   // float b = 0.5 + sin(3.0 + vUvY * 16.14) / 2.0;
 

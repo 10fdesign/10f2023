@@ -12,7 +12,7 @@ let scrollOffsetVelocity = 0.0;
 let lastScrollY = window.scrollY;
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
 
-renderer.setClearColor( 0xffffff, 1);
+renderer.setClearColor( 0xffffff, 0);
 renderer.autoClear = false;
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -133,8 +133,8 @@ const cameraTrackRadius = 2.0;
     camera.lookAt(torusRadius / 3, 0, 0);
     camera.updateProjectionMatrix();
 
-    // const pixelRatio = window.devicePixelRatio;
-    const pixelRatio = 1.0;
+    const pixelRatio = window.devicePixelRatio;
+    // const pixelRatio = 1.0;
     const desiredWidth = parent.clientWidth * pixelRatio | 0;
     const desiredHeight = parent.clientHeight * pixelRatio | 0;
     renderer.setSize(desiredWidth, desiredHeight, false);
