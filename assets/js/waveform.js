@@ -5,6 +5,8 @@ const canvas = document.getElementById('waveform');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(15, window.innerWidth / window.innerHeight, 0.1, 1000);
 
+const startTime = Date.now();
+
 let time = Date.now() / 1000 - 1684951075;
 let lastTime = Date.now() / 1000 - 1684951075;
 let scrollOffsetVar = 0.0;
@@ -24,39 +26,42 @@ camera.position.z = 15;
 renderer.setSize( window.innerWidth, window.innerHeight );
 
 const torusRadius = 10.0;
-const geometry = new THREE.TorusGeometry(torusRadius, 0.02, 14, 230, Math.PI * 3 / 4);
+const geometry = new THREE.TorusGeometry(torusRadius, 0.02, 9, 830, Math.PI * 3 / 4);
 
 // array of [offsetConstant, rotationConstant, timeMultiplier, length]
 let bandArms;
+
 bandArms = [
   // [], // basic shape with no waves
   [
-    ['0.0', '6.2', '0.03', '1.0'],
-    ['3.4', '-7.9', '0.016', '0.8'],
-    ['4.4', '9.1', '-0.053', '0.7'],
-    ['5.4', '14.1', '0.089', '0.4'],
-    ['5.4', '34.1', '0.039', '0.3'],
-    ['5.4', '53.1', '0.004', '0.23'],
+    ['0.0', '6.2', '33.0', '1.0'],
+    ['3.4', '-7.9', '63.0', '0.8'],
+    ['4.4', '9.1', '-18.0', '0.7'],
+    ['5.4', '14.1', '11.23', '0.4'],
+    ['5.4', '34.1', '25.6', '0.3'],
+    ['5.4', '53.1', '250.0', '0.23'],
   ],
   [
-    ['0.0', '6.2', '0.03', '1.0'],
-    ['3.4', '-7.9', '0.016', '0.8'],
-    ['4.4', '9.1', '-0.053', '0.7'],
-    ['5.4', '14.1', '0.089', '0.4'],
+    ['0.0', '6.2', '33.0', '1.0'],
+    ['3.4', '-7.9', '63.0', '0.8'],
+    ['4.4', '9.1', '-18.0', '0.7'],
+    ['5.4', '14.1', '11.23', '0.4'],
   ],
   [
-    ['0.5', '6.2', '0.03', '1.0'],
-    ['3.4', '-7.9', '0.016', '0.8'],
-    ['4.4', '9.1', '-0.053', '0.7'],
-    ['5.4', '14.1', '0.089', '0.4'],
-    ['5.4', '34.1', '-0.039', '0.3'],
+    ['0.5', '6.2', '33.0', '1.0'],
+    ['3.4', '-7.9', '63.0', '0.8'],
+    ['4.4', '9.1', '-18.0', '0.7'],
+    ['5.4', '14.1', '11.23', '0.4'],
+    ['5.4', '34.1', '-25.6', '0.3'],
   ],
   [
-    ['1.0', '6.2', '0.03', '1.0'],
-    ['3.4', '-7.9', '0.016', '0.8'],
-    ['4.4', '9.1', '-0.043', '0.7'],
+    ['1.0', '6.2', '33.0', '1.0'],
+    ['3.4', '-7.9', '63.0', '0.8'],
+    ['4.4', '9.1', '-23.0', '0.7'],
   ],
 ];
+
+let randomOffsets = Array(Math.max(...bandArms.map(x => x.length))).fill().map(x => Math.random() * 9.0);
 
 const vertexCode = document.getElementById( 'vertex_shader' ).textContent;
 const fragmentCode = document.getElementById( 'fragment_shader' ).textContent;
@@ -85,10 +90,11 @@ const uniforms = bandArms.map((bandArm, index) => {
 });
 
 const materials = bandArms.map((bandArm, index) => {
-  const armCode = bandArm.map((arm) => {
-    return `newPosition += arm( ${arm[0]} + uv.x * ${arm[1]} - time * ${arm[2]}, ${arm[3]});`
+  const armCode = bandArm.map((arm, armIndex) => {
+    return `newPosition += arm( ${randomOffsets[armIndex]} + uv.x * ${arm[1]} - time / ${arm[2]}, ${arm[3]});`
   }).join("\n  ");
   const interpolatedVertexCode = vertexCode.replace('//[ArmCalc]', armCode);
+  console.log(interpolatedVertexCode);
   return new THREE.ShaderMaterial({
     uniforms: uniforms[index],
     vertexShader: interpolatedVertexCode,
@@ -106,9 +112,6 @@ materials.forEach(material => {
   mesh.rotation.x = -Math.PI / 2.0;
   scene.add(mesh);
 });
-
-
-const cameraTrackRadius = 2.0;
 
 // Resize
 (function() {
@@ -133,8 +136,8 @@ const cameraTrackRadius = 2.0;
     camera.lookAt(torusRadius / 3, 0, 0);
     camera.updateProjectionMatrix();
 
-    const pixelRatio = window.devicePixelRatio;
-    // const pixelRatio = 1.0;
+    // const pixelRatio = window.devicePixelRatio;
+    const pixelRatio = 1.0;
     const desiredWidth = parent.clientWidth * pixelRatio | 0;
     const desiredHeight = parent.clientHeight * pixelRatio | 0;
     renderer.setSize(desiredWidth, desiredHeight, false);
@@ -152,7 +155,9 @@ function animate() {
   frames++;
 
   requestAnimationFrame( animate );
-  time = Date.now() / 1000 - 1684951075;
+
+  time = (Date.now() - startTime) / 1000.0;
+  // console.log(time);
   scrollOffsetVar += scrollOffsetVelocity / 100.0;
 
   if (time - lastTime >= 1.0) {
@@ -163,8 +168,10 @@ function animate() {
 
   scrollOffsetVelocity *= 0.97;
 
+  let shaderTime = Math.round(time * 100.0) / 100.0 + scrollOffsetVar * 4.0;
+  shaderTime = time + scrollOffsetVar * 4.0;
   uniforms.forEach(uniform => {
-    uniform.time.value = time + scrollOffsetVar * 4.0;
+    uniform.time.value = shaderTime;
   });
 
   camera.updateProjectionMatrix();
