@@ -1,0 +1,8 @@
+<div
+  class="bg-{{ include.bg_color }} text-{{include.text_color }} rounded-xl shadow-xl py-8 px-12 max-w-xl mb-12 ml-{{ include.number | minus: 1 | times: 8 }}">
+  {% if include.number > 1 %}
+  <div>{{ (include.number - 1) * 4 }}</div>
+  {% endif %}
+  <h4 class="font-bold text-xl mb-4">{{include.number}}. {{ include.title }}</h4>
+  <p>{{ include.body }}</p>
+</div>

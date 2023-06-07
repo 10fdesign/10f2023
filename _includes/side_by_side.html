@@ -1,0 +1,14 @@
+<div class="container py-10 max-w-4xl flex grid-cols-2 gap-x-12 text-white">
+  <div class="text-right min-w-[350px]">
+    <h1 class="text-5xl font-display mb-4">{{ include.title }}</h1>
+    <h2 class="mb-2 uppercase tracking-wider text-sky-200">{{ include.subtitle }}</h2>
+  </div>
+  <div class="text-left flex flex-col gap-4">
+    {% if include.p1 %}
+    <p>{{ include.p1 }}</p>
+    {% endif %}
+    {% if include.p2 %}
+    <p>{{ include.p2 }}</p>
+    {% endif %}
+  </div>
+</div>

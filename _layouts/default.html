@@ -15,16 +15,16 @@
 </head>
 
 <body class="font-body">
-  {% include nav.html %}
-  <section>
+  {% include nav.html
+  menu_item_classes="text-sky-500 hover:text-sky-700" %}
 
+  <section>
     {{ content }}
   </section>
+
   {% include footer.html %}
 
-  {% if page.url == "/" %}
   {% include waveform/waveform.html %}
-  {% endif %}
 </body>
 
 </html>
