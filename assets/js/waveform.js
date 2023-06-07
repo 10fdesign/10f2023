@@ -5,8 +5,6 @@ const canvas = document.getElementById('waveform');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(15, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-const startTime = Date.now();
-
 let time = Date.now() / 1000 - 1684951075;
 let lastTime = Date.now() / 1000 - 1684951075;
 let scrollOffsetVar = 0.0;
@@ -68,6 +66,10 @@ const fragmentCode = document.getElementById( 'fragment_shader' ).textContent;
 
 const uniforms = bandArms.map((bandArm, index) => {
   return {
+    startTime: {
+      value: (Date.now() / 1000.0) % 86400,
+      type: 'f'
+    },
     time: {
       value: 0.0,
       type: 'f'
@@ -78,12 +80,10 @@ const uniforms = bandArms.map((bandArm, index) => {
     },
     hue: {
       value: index * 0.01,
-      // value: 0.0,
       type: 'f'
     },
     faded: {
-      value: Math.min(window.scrollY / 200.0, 1.0),
-      // value: 0.0,
+      value: 0.0,
       type: 'f'
     }
   }
@@ -91,7 +91,7 @@ const uniforms = bandArms.map((bandArm, index) => {
 
 const materials = bandArms.map((bandArm, index) => {
   const armCode = bandArm.map((arm, armIndex) => {
-    return `newPosition += arm( ${randomOffsets[armIndex]} + uv.x * ${arm[1]} - time / ${arm[2]}, ${arm[3]});`
+    return `newPosition += arm( ${arm[0]} + uv.x * ${arm[1]} - time / ${arm[2]}, ${arm[3]});`
   }).join("\n  ");
   const interpolatedVertexCode = vertexCode.replace('//[ArmCalc]', armCode);
   console.log(interpolatedVertexCode);
@@ -153,10 +153,11 @@ let frames = 0;
 
 function animate() {
   frames++;
-
   requestAnimationFrame( animate );
 
-  time = (Date.now() - startTime) / 1000.0;
+  let now = Date.now() / 1000.0;
+
+  time = now % 86400;
   // console.log(time);
   scrollOffsetVar += scrollOffsetVelocity / 100.0;
 
@@ -168,10 +169,12 @@ function animate() {
 
   scrollOffsetVelocity *= 0.97;
 
-  let shaderTime = Math.round(time * 100.0) / 100.0 + scrollOffsetVar * 4.0;
+  let shaderTime = time - scrollOffsetVar * 4.0;
   shaderTime = time + scrollOffsetVar * 4.0;
+  let faded = Math.min(window.scrollY / 200.0, 1.0);
   uniforms.forEach(uniform => {
     uniform.time.value = shaderTime;
+    uniform.faded.value = faded;
   });
 
   camera.updateProjectionMatrix();
@@ -181,10 +184,6 @@ function animate() {
 animate();
 
 addEventListener("scroll", (event) => {
-
-  uniforms.forEach(uniform => {
-    uniform.faded.value = Math.min(window.scrollY / 200.0, 1.0);
-  });
 
   scrollOffsetVelocity += Math.min(1.0, Math.abs(window.scrollY - lastScrollY) / 40.0);
   lastScrollY = window.scrollY;
