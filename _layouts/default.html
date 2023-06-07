@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="style.css">
 
-    <script defer type="module" src="./assets/js/waveform.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="font-body">
-		{% include nav.html %}
-    <section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="style.css">
 
-      {{ content }}
-    </section>
-    {% include footer.html %}
-    {% include waveform/waveform.html %}
-  </body>
+  <script defer type="module" src="./assets/js/waveform.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Work+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="font-body">
+  {% include nav.html %}
+  <section>
+
+    {{ content }}
+  </section>
+  {% include footer.html %}
+
+  {% if page.url == "/" %}
+  {% include waveform/waveform.html %}
+  {% endif %}
+</body>
+
 </html>
