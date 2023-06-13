@@ -1,0 +1,9 @@
+<div id="waveform_container" class="top-0 left-0 fixed w-screen h-screen -z-50 pointer-events-none">
+  <canvas id="waveform" class="!w-full !h-full"></canvas>
+  <script type="x-shader/x-vertex" id="vertex_shader">
+    {% include waveform/vertex.vert %}
+  </script>
+  <script type="x-shader/x-fragment" id="fragment_shader">
+    {% include waveform/fragment.frag %}
+  </script>
+</div>

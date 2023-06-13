@@ -554,6 +554,26 @@ video {
   }
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.-z-50 {
+  z-index: -50;
+}
+
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -575,10 +595,6 @@ video {
 
 .mb-10 {
   margin-bottom: 2.5rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
 }
 
 .mb-2 {
@@ -609,28 +625,32 @@ video {
   display: flex;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
-.h-20 {
-  height: 5rem;
+.\!h-full {
+  height: 100% !important;
 }
 
 .h-16 {
   height: 4rem;
 }
 
-.w-full {
-  width: 100%;
+.h-screen {
+  height: 100vh;
 }
 
-.w-24 {
-  width: 6rem;
+.\!w-full {
+  width: 100% !important;
 }
 
 .w-16 {
   width: 4rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .max-w-2xl {
@@ -645,16 +665,8 @@ video {
   flex-basis: 33.333333%;
 }
 
-.basis-1\/5 {
-  flex-basis: 20%;
-}
-
 .basis-1\/6 {
   flex-basis: 16.666667%;
-}
-
-.basis-4\/5 {
-  flex-basis: 80%;
 }
 
 .basis-full {
@@ -663,11 +675,6 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.columns-3 {
-  -moz-columns: 3;
-       columns: 3;
 }
 
 .columns-1 {
@@ -708,24 +715,16 @@ video {
   gap: 4rem;
 }
 
-.gap-3 {
-  gap: 0.75rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-4 {
   gap: 1rem;
 }
 
-.gap-5 {
-  gap: 1.25rem;
-}
-
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .overflow-hidden {
@@ -744,9 +743,8 @@ video {
   border-radius: 0.25rem;
 }
 
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+.bg-gray-500\/10 {
+  background-color: rgb(107 114 128 / 0.1);
 }
 
 .bg-pink-50 {
@@ -772,14 +770,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.fill-teal-900 {
-  fill: #134e4a;
-}
-
-.fill-teal-500 {
-  fill: #14b8a6;
 }
 
 .fill-green-300 {
@@ -817,10 +807,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .font-body {
