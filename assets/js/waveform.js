@@ -94,7 +94,7 @@ const materials = bandArms.map((bandArm, index) => {
     return `newPosition += arm( ${arm[0]} + uv.x * ${arm[1]} - time / ${arm[2]}, ${arm[3]});`
   }).join("\n  ");
   const interpolatedVertexCode = vertexCode.replace('//[ArmCalc]', armCode);
-  console.log(interpolatedVertexCode);
+  // console.log(interpolatedVertexCode);
   return new THREE.ShaderMaterial({
     uniforms: uniforms[index],
     vertexShader: interpolatedVertexCode,
@@ -162,7 +162,7 @@ function animate() {
   scrollOffsetVar += scrollOffsetVelocity / 100.0;
 
   if (time - lastTime >= 1.0) {
-    console.log(frames);
+    // console.log(frames);
     frames = 0;
     lastTime = time;
   }
