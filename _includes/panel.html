@@ -1,12 +1,17 @@
 <div class="container my-16">
-  <h3 class="text-{{ include.dark_color }} font-bold mb-2">{{ include.subtitle }}</h3>
+  <h3 class="text-{{ include.panel_color }} font-bold mb-2">{{ include.subtitle }}</h3>
   <h2 class="text-3xl font-display mb-5">{{ include.title }}</h2>
-  <p class="max-w-2xl mb-3">{{ include.body }}</p>
+
+  {% if include.p1 %}
+  <p class="max-w-2xl mb-3 mb-[122px]">{{ include.p1 }}</p>
+  {% endif %}
+  {% if include.p2 %}
+  <p class="max-w-2xl mb-3">{{ include.p2 }}</p>
+  {% endif %}
+
   {% if include.button_text and include.button_link %}
   {% include button.html
-  text_color=include.dark_color
-  bg_color=include.light_color
-  outline_color=include.mid_color
+  button_color=include.panel_color
   button_text=include.button_text
   button_link=include.button_link
   %}

@@ -1,32 +1,48 @@
 ---
 layout: alt
+layout_color: teal-500
 ---
 
-<div class="bg-teal-500">
+<div class="bg-{{ page.layout_color }}">
   {% include side_by_side.html
   subtitle="10F DESIGN"
   title="Wordpress web development"
-  p1="Nearly half of websites on the Internet today are built using Wordpress and for good reason. Compared to other
-  content management systems (CMS), Wordpress is accessible and user-friendly, which means that you'll be able to easily
-  manage and update content on your website once the development process is finished. As with all other parts of your
-  website, we'll design your CMS to suit your specific business needs so that you can do things like craft blog posts,
-  add
-  listings, share events, and update images without the help of a web developer."
-  p2="Plus, it doesn't hurt that Wordpress's hosting is affordable, which means that even the smallest of businesses can
-  fit a powerful website into their operating budgets."
+  p1="Nearly half of websites on the Internet today are built using Wordpress and for good reason. Plus, it doesn't hurt
+  that
+  Wordpress's hosting is affordable, which means that even the smallest of businesses can fit a powerful website into
+  their operating budgets."
   %}
 
 </div>
 
-{% include panel.html
-subtitle="No templates or page builders"
-title="Fully custom design"
-body="When we design your Wordpress website, 10F creates a custom theme, built from scratch by our web development team.
-That means we don't use any of the cookie-cutter, commercial themes, templates, or page builders that Wordpress offers.
-Your Wordpress website will be 100% unique to your brand and specific business goals."
-dark_color="teal-500"
-mid_color="teal-200"
-light_color="teal-50"
-%}
+<div class="container grid grid-cols-3 gap-x-12">
+  <div>
 
-{% include workflow/workflow.html %}
+    {% include panel.html
+    subtitle="No Templates or Page Builders"
+    title="Fully custom design"
+    p1="When we design your Wordpress website, 10F creates a custom theme, built from scratch by our web development
+    team. That means we don't use any of the cookie-cutter, commercial themes, templates, or page builders that
+    Wordpress
+    offers. Your Wordpress website will be 100% unique to your brand and specific business goals."
+    p2="As with all other parts of your website, we'll design your website to suit your specific business needs so that
+    you can do things like craft blog posts, add listings, share events, and update images without the help of a web
+    developer."
+    panel_color=page.layout_color
+    %}
+
+    {% include panel.html
+    subtitle="Take the First Step!"
+    title="Schedule a free consultation"
+    p1="Every great project starts with a conversation. We'll discuss your business goals, your target audience, and
+    your
+    brand identity. We'll also talk about your budget and timeline. We'll then create a proposal that outlines the
+    project. Get in touch with us today to schedule your free consultation."
+    button_text="Schedule a consultation"
+    button_link="/contact-us"
+    panel_color="pink-500"
+    %}
+  </div>
+
+  {% include workflow/workflow.html %}
+</div>

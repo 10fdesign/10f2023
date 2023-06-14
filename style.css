@@ -578,11 +578,6 @@ video {
   z-index: -50;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -604,10 +599,6 @@ video {
 
 .mb-10 {
   margin-bottom: 2.5rem;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
 }
 
 .mb-2 {
@@ -634,16 +625,8 @@ video {
   margin-bottom: 2rem;
 }
 
-.ml-0 {
-  margin-left: 0px;
-}
-
-.ml-16 {
-  margin-left: 4rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
+.mb-\[123px\] {
+  margin-bottom: 123px;
 }
 
 .mt-4 {
@@ -654,12 +637,20 @@ video {
   margin-top: 1.5rem;
 }
 
+.mb-\[122px\] {
+  margin-bottom: 122px;
+}
+
 .inline-block {
   display: inline-block;
 }
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .\!h-full {
@@ -688,10 +679,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.min-w-\[350px\] {
-  min-width: 350px;
 }
 
 .max-w-2xl {
@@ -738,6 +725,10 @@ video {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -809,33 +800,29 @@ video {
   border-radius: 0.75rem;
 }
 
+.bg-cyan-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 116 144 / var(--tw-bg-opacity));
+}
+
 .bg-gray-500\/10 {
   background-color: rgb(107 114 128 / 0.1);
 }
 
-.bg-pink-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
+.bg-pink-500\/10 {
+  background-color: rgb(236 72 153 / 0.1);
 }
 
-.bg-pink-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 242 248 / var(--tw-bg-opacity));
+.bg-pink-600\/10 {
+  background-color: rgb(219 39 119 / 0.1);
 }
 
-.bg-sky-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+.bg-sky-500\/10 {
+  background-color: rgb(14 165 233 / 0.1);
 }
 
-.bg-sky-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 249 255 / var(--tw-bg-opacity));
-}
-
-.bg-teal-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 253 250 / var(--tw-bg-opacity));
+.bg-sky-700\/10 {
+  background-color: rgb(3 105 161 / 0.1);
 }
 
 .bg-teal-500 {
@@ -843,9 +830,12 @@ video {
   background-color: rgb(20 184 166 / var(--tw-bg-opacity));
 }
 
-.bg-violet-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(167 139 250 / var(--tw-bg-opacity));
+.bg-teal-500\/10 {
+  background-color: rgb(20 184 166 / 0.1);
+}
+
+.bg-violet-600\/10 {
+  background-color: rgb(124 58 237 / 0.1);
 }
 
 .bg-white {
@@ -855,6 +845,10 @@ video {
 
 .fill-green-300 {
   fill: #86efac;
+}
+
+.fill-white {
+  fill: #fff;
 }
 
 .px-12 {
@@ -966,6 +960,11 @@ video {
   letter-spacing: 0.05em;
 }
 
+.text-cyan-700 {
+  --tw-text-opacity: 1;
+  color: rgb(14 116 144 / var(--tw-text-opacity));
+}
+
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -976,14 +975,24 @@ video {
   color: rgb(236 72 153 / var(--tw-text-opacity));
 }
 
-.text-sky-200 {
+.text-pink-600 {
   --tw-text-opacity: 1;
-  color: rgb(186 230 253 / var(--tw-text-opacity));
+  color: rgb(219 39 119 / var(--tw-text-opacity));
+}
+
+.text-sky-100 {
+  --tw-text-opacity: 1;
+  color: rgb(224 242 254 / var(--tw-text-opacity));
 }
 
 .text-sky-500 {
   --tw-text-opacity: 1;
   color: rgb(14 165 233 / var(--tw-text-opacity));
+}
+
+.text-sky-700 {
+  --tw-text-opacity: 1;
+  color: rgb(3 105 161 / var(--tw-text-opacity));
 }
 
 .text-teal-100 {
@@ -996,15 +1005,14 @@ video {
   color: rgb(20 184 166 / var(--tw-text-opacity));
 }
 
+.text-violet-600 {
+  --tw-text-opacity: 1;
+  color: rgb(124 58 237 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .hover\:text-sky-700:hover {
@@ -1029,16 +1037,16 @@ video {
   outline-offset: 2px;
 }
 
-.hover\:outline-pink-300:hover {
-  outline-color: #f9a8d4;
+.hover\:outline-pink-500\/25:hover {
+  outline-color: rgb(236 72 153 / 0.25);
 }
 
-.hover\:outline-sky-300:hover {
-  outline-color: #7dd3fc;
+.hover\:outline-sky-500\/25:hover {
+  outline-color: rgb(14 165 233 / 0.25);
 }
 
-.hover\:outline-teal-200:hover {
-  outline-color: #99f6e4;
+.hover\:outline-teal-500\/25:hover {
+  outline-color: rgb(20 184 166 / 0.25);
 }
 
 @media (min-width: 640px) {
