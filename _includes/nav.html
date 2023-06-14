@@ -1,11 +1,15 @@
 <div class="container flex justify-between items-center py-4">
-  <a href="/" class="{% if page.layout == 'alt' %}fill-white{% endif %}">{% include logo.svg %}</a>
+  <a href="/" class="{% if page.layout == 'alt' %}fill-white{% endif %} transition-colors hover:fill-[#ff6583]">{%
+    include logo.svg %}</a>
   <ul class="flex gap-8 font-bold">
     <li>
       <a class="{{ include.menu_item_classes }}" href="/wordpress">Wordpress</a>
     </li>
     <li>
       <a class="{{ include.menu_item_classes }}" href="/ruby-on-rails">Ruby on Rails</a>
+    </li>
+    <li>
+      <a class="{{ include.menu_item_classes }}" href="/managed-hosting">Managed Hosting</a>
     </li>
     <li>
       <a class="{{ include.menu_item_classes }}" href="/contact-us">Contact</a>

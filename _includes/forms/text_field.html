@@ -1,0 +1,7 @@
+<div class="mb-2 w-full">
+  <label class="block select-none" for="{{ include.name }}">{{ include.label }}{% if include.required %} (required){%
+    endif
+    %}</label>
+  <input class="block bg-neutral-100 px-4 py-2 w-full" type="{{ include.type }}" name="{{ include.name }}"
+    id="{{ include.name }}" {% if include.required %}required{% endif %}>
+</div>

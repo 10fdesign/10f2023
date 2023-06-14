@@ -1,0 +1,6 @@
+<div class="flex">
+  <input class="mr-2" type="{{ include.type }}" name="{{ include.name }}" id="{{ include.name }}" {% if include.required
+    %}required{% endif %}>
+  <label class="select-none" for="{{ include.name }}">{{ include.label }}{% if include.required %} (required){% endif
+    %}</label>
+</div>

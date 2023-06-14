@@ -1,0 +1,66 @@
+<form id="contact-form" action="https://formspree.io/f/mwkywjpg" method="POST">
+  {% include forms/text_field.html
+  label="Your name"
+  name="name"
+  type="text"
+  required=true
+  %}
+
+  {% include forms/text_field.html
+  label="Email address"
+  name="email"
+  type="text"
+  required=true
+  %}
+
+  {% include forms/text_field.html
+  label="Phone number"
+  name="phone"
+  type="text"
+  %}
+
+  <div class="mb-2">
+    <h4 class="mb-2">What best describes you?</h4>
+
+    {% include forms/checkbox_field.html
+    label="I'm looking for a new website"
+    name="new_website"
+    type="checkbox"
+    %}
+
+    {% include forms/checkbox_field.html
+    label="I need someone to manage my existing website for me"
+    name="manage"
+    type="checkbox"
+    %}
+
+    {% include forms/checkbox_field.html
+    label="I'm an agency looking for a partnership"
+    name="agency"
+    type="checkbox"
+    %}
+
+    {% include forms/checkbox_field.html
+    label="Something else"
+    name="other"
+    type="checkbox"
+    %}
+  </div>
+
+  {% include forms/text_field.html
+  label="What's your budget?"
+  name="budget"
+  type="text"
+  %}
+
+  {% include forms/textarea.html
+  label="Anything else we should know?"
+  name="message"
+  rows=8
+  %}
+
+  {% include forms/submit.html
+  label="Get in touch"
+  button_color="green-500"
+  %}
+</form>

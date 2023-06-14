@@ -1,12 +1,35 @@
 ---
 layout: alt
+layout_color: blue-500
 ---
 
-<div class="bg-teal-500">
+<div class="bg-{{ page.layout_color }}">
   {% include side_by_side.html
   subtitle="10F DESIGN"
   title="Managed Web Hosting"
-  p1="Hosting and managing your own site can be intimidating. Wordpress core and plugins are constantly updating independently of each other, and since plugins are made by third-party developers, you never know if it's safe to click that tempting 'Update All' button. If something goes wrong, you're making frantic phone calls to your developer at best, or at worst staring at a blank white page with no clue how to fix it."
-  p2="Let us take that burden off your shoulders. With our managed Wordpress hosting service, our team of elite developers will update your site monthly and fix any compatibility problems that might arise. Our automated backups remove any risk from the equation." 
+  p1="Hosting and managing your own site can be intimidating. Wordpress core and plugins are constantly updating
+  independently of each other, and since plugins are made by third-party developers, you never know if it's safe to
+  click that tempting 'Update All' button. If something goes wrong, you're making frantic phone calls to your developer
+  at best, or at worst staring at a blank white page with no clue how to fix it."
   %}
+</div>
+
+<div class="container grid grid-cols-2 gap-x-12">
+  {% include panel.html
+  subtitle="Say Goodbye to Website Worries"
+  title="Get a free quote"
+  p1="Let us take that burden off your shoulders. With our managed Wordpress hosting service, our team of elite
+  developers
+  will update your site monthly and fix any compatibility problems that might arise. Our automated backups remove any
+  risk
+  from the equation."
+  p2="Get in touch with us today via our handy contact form. You can also email us at <a
+    href='mailto:chris@10fdesign.io' class='text-sky-500 hover:text-sky-700'>chris@10fdesign.io</a>. We look
+  forward
+  to working together!"
+  panel_color=page.layout_color
+  %}
+  <div class="my-12">
+    {% include forms/managed_hosting__form.html %}
+  </div>
 </div>

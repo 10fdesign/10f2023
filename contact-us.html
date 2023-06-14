@@ -5,12 +5,26 @@ layout: default
 {% include hero.html
 subtitle="10F DESIGN"
 title="Contact Us"
-body="10F Design collaborates with clients in southern Vermont and beyond. We take a goal oriented approach, asking not just how you want your website to look and feel, but what you want your website to achieve for your business.</p><p class='mt-6'>Whether you're looking to expand your ecommerce capabilities, streamline your website content, or just freshen up your website design, our nimble team of web developers and designers will work with you to make your vision a reality. "
-%}
+body="10F Design collaborates with clients in southern Vermont and beyond. We take a goal oriented approach, asking not
+just how you want your website to look and feel, but what you want your website to achieve for your business.</p>
+<p class='mt-6'>Whether you're looking to expand your ecommerce capabilities, streamline your website content, or just
+	freshen up your website design, our nimble team of web developers and designers will work with you to make your vision
+	a reality. "
+	%}
 
-<div class="container my-16">
-	<h2 class="text-3xl font-display mb-5">We're ready to get started! Are you?</h2>
-	<p class="max-w-2xl mb-6">
-		Get in touch with us by filling out the form below or by giving us a call at 802-380-6847. You can also email us at chris@10fdesign.io. We look forward to working with you!
-	</p>
+<div class="container grid grid-cols-2 gap-x-12">
+	<div>
+		{% include panel.html
+		subtitle="Ready To Get Started?"
+		title="Schedule a free consultation"
+		p1="Every great project starts with a conversation. Get in touch with us today via our handy contact form. You can
+		also email us at <a href='mailto:chris@10fdesign.io' class='text-sky-500 hover:text-sky-700'>chris@10fdesign.io</a>.
+		We look
+		forward to working together!"
+		panel_color="green-500"
+		%}
+	</div>
+	<div class="my-16">
+		{% include forms/contact_us__form.html %}
+	</div>
 </div>
