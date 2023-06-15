@@ -1,0 +1,21 @@
+<div class="">
+  <!-- Static menu -->
+  <div>
+    {% include nav/menu.html %}
+  </div>
+
+  <!-- Fixed menu that drops down on scrolled -->
+  <div class="fixed top-0 left-0 w-full transition-all opacity-0 bg-neutral-100 -translate-y-4 invisible z-20"
+    id="scrolled-header">
+    {% include nav/menu.html %}
+  </div>
+
+  <!-- Mobile menu -->
+  <ul id="mobile-menu"
+    class="touch-none overflow-hidden h-0 fixed left-0 top-0 w-full bg-neutral-100 transition-[height] text-neutral-700 text-2xl">
+    <div class="container mt-20">
+      {% include nav/menu_items.html
+      menu_item_classes="mb-2 inline-block" %}
+    </div>
+  </ul>
+</div>

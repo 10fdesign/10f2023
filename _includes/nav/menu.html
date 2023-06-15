@@ -1,0 +1,21 @@
+<div class="container flex justify-between items-center py-4">
+  <a href="/" id="logo"
+    class="{% if page.layout == 'alt' %}fill-white{% endif %} transition-all hover:fill-[#ff6583] z-20 inline-block">
+    {%
+    include svg/logo.svg
+    class="h-6 md:h-12 w-auto"
+    %}
+  </a>
+
+  <ul class="gap-8 font-bold hidden md:flex">
+    {% include nav/menu_items.html %}
+  </ul>
+
+  <!-- Mobile menu toggle -->
+  <div class="mobile-menu-icon md:hidden">
+    {% include svg/menu.svg
+    id="mobile-menu-icon"
+    class=" z-20 relative"
+    %}
+  </div>
+</div>
