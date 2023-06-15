@@ -4,7 +4,7 @@ module.exports = {
   content: ["./_site/**/*.html", "./assets/js/*.js"],
   theme: {
     fontFamily: {
-      body: ["Work Sans", "sans-serif"],
+      body: ["Inter", "sans-serif"],
       display: ["Tilt Warp", "sans-serif"]
     },
     container: {
