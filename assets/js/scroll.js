@@ -18,7 +18,7 @@ window.addEventListener('scroll', function(){
   header = document.getElementById("scrolled-header");
   scrollpos = window.scrollY;
 
-  if(scrollpos > 200){
+  if(scrollpos > 300){
     show_on_scrolled();
   }
   else {
