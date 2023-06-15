@@ -1,13 +1,16 @@
 <div class="">
   <!-- Static menu -->
   <div>
-    {% include nav/menu.html %}
+    {% include nav/menu.html
+    menu_item_classes=include.menu_item_classes %}
   </div>
 
   <!-- Fixed menu that drops down on scrolled -->
-  <div class="fixed top-0 left-0 w-full transition-all opacity-0 bg-white -translate-y-4 invisible z-20"
+  <div class="fixed top-0 left-0 w-full transition-all opacity-0 bg-white -translate-y-4 invisible z-20 shadow"
     id="scrolled-header">
-    {% include nav/menu.html %}
+    {% include nav/menu.html
+    menu_item_classes=include.menu_item_classes
+    logo_class="fill-black" %}
   </div>
 
   <!-- Mobile menu -->
