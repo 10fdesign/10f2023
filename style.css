@@ -676,6 +676,14 @@ video {
   margin-top: 1.5rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -949,6 +957,10 @@ video {
 
 .fill-white {
   fill: #fff;
+}
+
+.\!fill-black {
+  fill: #000 !important;
 }
 
 .p-2 {
@@ -1227,6 +1239,14 @@ video {
 @media (min-width: 768px) {
   .md\:mb-10 {
     margin-bottom: 2.5rem;
+  }
+
+  .md\:mb-40 {
+    margin-bottom: 10rem;
+  }
+
+  .md\:mt-40 {
+    margin-top: 10rem;
   }
 
   .md\:flex {
