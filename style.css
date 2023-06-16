@@ -928,6 +928,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.\!fill-black {
+  fill: #000 !important;
+}
+
 .fill-black {
   fill: #000;
 }
@@ -938,10 +942,6 @@ video {
 
 .fill-white {
   fill: #fff;
-}
-
-.\!fill-black {
-  fill: #000 !important;
 }
 
 .p-2 {
