@@ -21,7 +21,7 @@
 title: "10F Design | A Vermont Web Design Company"
 email: oscar@10fdesign.io
 description: >- # this means to ignore newlines until "baseurl:"
-  "Transform your online presence with the help of 10F Design, a Vermont web design company. Schedule a free consultation today!"
+  Transform your online presence with the help of 10F Design, a Vermont web design company. Schedule a free consultation today!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://10fdesign.io" # the base hostname & protocol for your site, e.g. http://example.com
 
