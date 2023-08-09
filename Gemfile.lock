@@ -14,6 +14,7 @@ GEM
     ffi (1.15.5)
     foreman (0.87.2)
     forwardable-extended (2.6.0)
+    google-protobuf (3.23.0-arm64-darwin)
     google-protobuf (3.23.0-x86_64-darwin)
     google-protobuf (3.23.0-x86_64-linux)
     htmlcompressor (0.4.0)
@@ -89,6 +90,7 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
+  arm64-darwin-22
   x86_64-darwin-21
   x86_64-linux
 
