@@ -1,0 +1,26 @@
+---
+layout: alt
+layout_color: blue-500
+---
+
+<div class="bg-{{ page.layout_color }}">
+    {% include side_by_side.html
+    subtitle="10F DESIGN"
+    title="Portfolio"
+    p1="
+    Welcome to 10F Design, where we turn your web dreams into reality. Our designs aren't just pretty faces—they're
+    user-friendly, conversion-driven powerhouses. Check out our portfolio to see how we blend style with substance,
+    creating websites that work as good as they look. Let's make your online presence shine!"
+    %}
+</div>
+
+<div class="container grid my-12 gap-y-12">
+    {% assign projects = site.projects | sort: "date" | reverse %}
+    {% for project in projects %}
+    {% assign remainder = forloop.index | modulo: 2 %}
+    {% include project.html
+    project=project
+    remainder=remainder
+    %}
+    {% endfor %}
+</div>
