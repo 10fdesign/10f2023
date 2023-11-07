@@ -17,8 +17,10 @@ layout_color: blue-500
 
 <div class="container grid my-12 gap-y-12">
     {% for project in site.projects %}
+    {% assign remainder = forloop.index | modulo: 2 %}
     {% include project.html
     project=project
+    remainder=remainder
     %}
     {% endfor %}
 </div>
