@@ -2,17 +2,16 @@
 
 	<h1 class="md:text-5xl text-3xl font-display md:text-center mb-10">Recent Work</h1>
 
-	{% for project in site.projects : limit 1 %}
+	{% assign project = site.projects | sort "date" | reverse | first %}
 	{% include project.html
 	project=project
 	%}
-	{% endfor %}
 
-	{% if false %}
+	{% if true %}
 	<div class="flex flex-col-reverse md:flex md:flex-row gap-4 items-center my-4">
 		<div class="basis-1/2 text-right">
 			{% include button.html
-			button_color="white"
+			button_color="red-100"
 			button_text="View Portfolio"
 			button_link="/portfolio"
 			%}

@@ -1,6 +1,6 @@
 ---
-title:  "Vermont Vacations Directory"
-date:   2022-04-26 12:16:31 -0400
+title:  "Vermont Vacations directory"
+date:   2023-03-26 12:16:31 -0400
 responsibilities: "Design & Development"
 link: "https://plan.vermontvacation.com/"
 tile-photo: assets/images/vermont vacations tile image.jpg

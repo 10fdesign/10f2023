@@ -1,6 +1,6 @@
 ---
 title:  "Vermont Attractions Association"
-date:   2022-04-26 12:16:31 -0400
+date:   2022-08-26 12:16:31 -0400
 responsibilities: "Design & Development"
 link: "https://vtattractions.org/"
 tile-photo: assets/images/vaa tile.png
