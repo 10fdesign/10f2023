@@ -12,21 +12,23 @@
         <h1 class="md:text-4xl text-2xl font-display mb-8">{{ project.title }}</h1>
         <div class="mb-3">{{ project.excerpt }}</div>
         <div>
-        	{% if remainder == 0 %}
-            {% include button.html
-            button_color="pink-500"
-            button_text="View Website"
-            button_link=project.link
-            target="_blank"
-            %}
-        	{% else %}
-        		{% include button.html
-            button_color="sky-500"
-            button_text="View Website"
-            button_link=project.link
-            target="_blank"
-            %}
-        	{% endif %}
+        	{% if project.link %}
+	        	{% if remainder == 0 %}
+	            {% include button.html
+	            button_color="pink-500"
+	            button_text="View Website"
+	            button_link=project.link
+	            target="_blank"
+	            %}
+	        	{% else %}
+	        		{% include button.html
+	            button_color="sky-500"
+	            button_text="View Website"
+	            button_link=project.link
+	            target="_blank"
+	            %}
+	        	{% endif %}
+	        {% endif %}
         </div>
     </div>
 </div>
