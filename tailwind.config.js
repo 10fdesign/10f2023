@@ -7,6 +7,9 @@ module.exports = {
       body: ["Inter", "sans-serif"],
       display: ["Tilt Warp", "sans-serif"]
     },
+    screens: {
+      'ad': '728px'
+    },
     container: {
       center: true,
       padding: "1rem",
