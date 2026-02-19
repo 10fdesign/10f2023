@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Commons Ad</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.project-logo {
+			display: none;
+			opacity: 0;
+			object-fit: contain;
+			transition: opacity 1.2s;
+			width: full;
+		}
+		.project-logo-visible {
+			display: block;
+			opacity: 1;
+		}
+	</style>
+
+	<script>
+		window.addEventListener("load", function () {
+			console.log("loaded");
+			var logos = document.getElementsByClassName("project-logo");
+			var current_logo = 0;
+			setInterval(function() {
+				logos[current_logo].classList.remove("project-logo-visible");
+				current_logo = ( current_logo + 1 ) % logos.length;
+				logos[current_logo].classList.add("project-logo-visible");
+			}, 2000);
+		});
+	</script>
+</head>
+<body>
+	<a href="https://10fdesign.io" target="_blank" class="mb-[2em]">
+		<div class="w-[728px] h-[145px] grid grid-cols-3 gap-8 px-8 bg-gradient-to-r to-sky-100 via-white from-pink-100 py-2">
+			<div class="flex flex-col justify-center font-body">
+				<div class="text-md tracking-widest text-slate-400 leading-none">Brattleboro's Premier</div>
+				<div class="text-xl uppercase text-slate-800">Web Developers</div>
+			</div>
+			<div class="flex flex-col justify-center">
+				<div class="font-display text-4xl text-sky-500 uppercase font-bold">
+					10<span class='text-pink-600'>F</span> Design
+				</div>
+			</div>
+			<div class="flex flex-col items-center justify-center gap-0 text-slate-400">
+				<div class="font-body uppercase font-bold text-lg leading-none">
+					Websites by us
+				</div>
+				<div class="w-full aspect-video flex flex-col items-center justify-center">
+					<img src="./assets/images/commons ad logos/brattleboro chamber.webp" alt="" class="project-logo project-logo-visible">
+					<img src="./assets/images/commons ad logos/brattleboro retreat transparent.png" alt="" class="project-logo">
+					<img src="./assets/images/commons ad logos/the commons transparent.png" alt="" class="project-logo">
+					<img src="./assets/images/commons ad logos/wolf kahn.svg" alt="" class="project-logo" />
+				</div>
+			</div>
+		</div>
+		<div class="w-[728px] h-[5px] bg-gradient-to-r from-sky-500 via-white to-pink-600"></div>
+	</a>
+</body>
+</html>
